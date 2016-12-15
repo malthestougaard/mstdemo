@@ -1,8 +1,11 @@
+sudo: required
 language: node_js
 node_js:
   - stable
   - 4.2
-services: mongodb
+services:
+  - mongodb
+  - docker
 before_script:
   - npm install -g npm@latest
   - npm install
@@ -10,3 +13,6 @@ script:
   - npm test
 after_script:
   - npm run coveralls
+
+before_install:
+  - docker build -t malthestougaard/mstdemo .
