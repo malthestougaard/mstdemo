@@ -19,4 +19,4 @@ EXPOSE 3000
 ENV NODE_ENV='production'
 
 # Run app
-CMD ["node", "app.js"]
+CMD ["npm", "start"]
