@@ -6,7 +6,6 @@ ADD package.json /tmp/package.json
 RUN cd /tmp && npm install --production
 RUN mkdir -p /src && cp -a /tmp/node_modules /src/
 
-# Add dist folder
 COPY . /src
 
 # Define working directory
