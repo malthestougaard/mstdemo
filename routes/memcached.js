@@ -2,7 +2,12 @@ var express = require('express');
 var Memcached = require('memcached');
 
 var router = express.Router();
-var memcached = new Memcached("mymem:11211");
+var memcached = new Memcached();
+memcached.connect('mymem:11211', function( err, conn ){
+  if( err ) {
+     console.log( conn.server );
+  }
+});
 
 router.get('/ping', function(req, res, next) {
   res.send("ping");
