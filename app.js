@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var users = require('./routes/memcached');
+var memcached = require('./routes/memcached');
 
 var app = express();
 
